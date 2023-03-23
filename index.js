@@ -1,6 +1,6 @@
 // import axios from 'axios'
 
-const OPENAI_API_KEY = "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"
+const OPENAI_API_KEY = "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"
 
 const form = document.querySelector("form")
 const chatContainer = document.querySelector("#chat_container")
