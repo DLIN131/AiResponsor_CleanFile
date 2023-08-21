@@ -1,14 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap");
-
+:root {
+  --sidebarWd:  30vw;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Alegreya Sans", sans-serif;
+  /* font-family: "Alegreya Sans", sans-serif; */
 }
 
 body {
   background: #343541;
+  overflow-x: hidden;
 }
 
 #app {
@@ -28,7 +31,7 @@ body {
   height: 100%;
   overflow-y: scroll;
 
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   gap: 10px;
 
@@ -118,10 +121,11 @@ form {
   margin: 0 auto;
   padding: 10px;
   background: #40414F;
-
+  /* margin-right: auto; */
   display: flex;
   flex-direction: row;
   gap: 10px;
+  transition: transform 0.5s;
 }
 
 textarea {
@@ -147,4 +151,46 @@ button {
 form img {
   width: 30px;
   height: 30px;
+}
+.side-bar-btn{
+  position: absolute;
+  text-align: center;
+  padding: 2px;
+  width: 3rem;
+  height: 3rem;
+  right: 2vw;
+  top: 3vh;
+  font-size: 2rem;
+  background-color: #40414F;
+  color: white;
+  border: white 1px solid;
+  border-radius: 10px;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+.side-bar{
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 3rem;
+  position: absolute;
+  right: -30vw;
+  top: 0;
+  width: 30vw;
+  height: 100vh;
+  background-color: #40414F;
+  transition: 0.5s;
+  padding-top: 5rem;
+  font-size: larger;
+  overflow: hidden;
+}
+#app.side-bar-open .side-bar{
+  right: 0vw;
+}
+#app.side-bar-open form{
+  transform: translateX(-15vw);
+}
+.side-bar input{
+  width: 25rem;
+  height: 2rem;
 }
